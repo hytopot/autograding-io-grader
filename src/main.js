@@ -16,11 +16,11 @@ function getInputs() {
   const setupCommand = core.getInput('setup-command')
   const command = core.getInput('command', {
     required: true,
-  })
+  }).replace(/\r\n/g, "\n")
   const input = core.getInput('input').trim()
   const expectedOutput = core.getInput('expected-output', {
     required: true,
-  })
+  }).replace(/\r\n/g, "\n")
   const comparisonMethod = core.getInput('comparison-method', {
     required: true,
   })
